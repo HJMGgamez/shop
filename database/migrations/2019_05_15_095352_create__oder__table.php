@@ -14,10 +14,10 @@ class CreateOderTable extends Migration
     public function up()
     {
         Schema::create('oders', function (Blueprint $table) {
-            $table->bigIncrements('oder_id');
+            $table->bigIncrements('id');
             $table->decimal('total_price', 8, 2);
-            $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('client_id')->on('client');
+            $table->unsignedBigInteger('clientId');
+            $table->foreign('clientId')->references('id')->on('client');
             $table->timestamps();
         });
     }

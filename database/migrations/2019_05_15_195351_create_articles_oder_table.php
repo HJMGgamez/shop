@@ -15,11 +15,11 @@ class CreateArticlesOderTable extends Migration
     {
         Schema::create('articles_oder', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('oder_id')->unsigned();
-            $table->unsignedBigInteger('article_id')->unsigned();
+            $table->unsignedBigInteger('oderId')->unsigned();
+            $table->unsignedBigInteger('articleId')->unsigned();
             
-            $table->foreign('oder_id')->references('oder_id')->on('oders');
-            $table->foreign('article_id')->references('article_id')->on('articles');
+            $table->foreign('oderId')->references('id')->on('oders');
+            $table->foreign('articleId')->references('id')->on('articles');
         });
     }
 

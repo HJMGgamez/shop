@@ -14,15 +14,15 @@ class CreateClientTable extends Migration
     public function up()
     {
         Schema::create('client', function (Blueprint $table) {
-            $table->bigIncrements('client_id');
+            $table->bigIncrements('id');
             $table->string('country');
             $table->string('city');
             $table->string('zipCode');
             $table->string('street');
             $table->string('houseNumber');
             $table->integer('phoneNumber');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('id')->on('users');
             $table->timestamps();
         });
     }
